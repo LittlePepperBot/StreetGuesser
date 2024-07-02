@@ -1,4 +1,3 @@
-//timer and retry button are broken
 var StreetList = MAP.Vinewood;
 
 class StreetGuesserStreetObject2 extends StreetObject {

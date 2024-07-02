@@ -1,4 +1,3 @@
-//timer and retry button are broken
 var StreetList3 = MAP.MirrorPark;
 
 class StreetGuesserStreetObject3 extends StreetObject {

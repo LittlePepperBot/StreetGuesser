@@ -1,4 +1,3 @@
-//timer and retry button are broken
 var StreetList4 = MAP.Sandy;
 
 class StreetGuesserStreetObject4 extends StreetObject {
