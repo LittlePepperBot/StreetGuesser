@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Just Street Guesser</title>
+
+        <meta charset="utf-8">
+
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/sections.css">
+        <link rel="stylesheet" href="styles/search.css">
+
+
+        <link rel="stylesheet" href="styles/properties.css"></link>
+
+
+        <link rel="stylesheet" href="styles/games.css"></link>
+
+        <script type="text/javascript" src="database.js"></script>
+
+        <script type="text/javascript" src="scripts/main.js"></script>
+        <script type="text/javascript" src="scripts/vector.js"></script>
+        <script type="text/javascript" src="scripts/page.js"></script>
+        <script type="text/javascript" src="scripts/search.js"></script>
+        <script type="text/javascript" src="scripts/map.js"></script>
+
+
+
+
+        <script type="text/javascript" src="scripts/pages/games.js"></script>
+        <script type="text/javascript" src="scripts/pages/games/streetguesser.js"></script>
+		<script type="text/javascript" src="scripts/pages/games/streetguesser2.js"></script>
+        <script type="text/javascript" src="scripts/pages/games/streetguesser3.js"></script>
+        <script type="text/javascript" src="scripts/pages/games/streetguesser4.js"></script>
+        
+        
+        
+    </head>
+
+    <body>
+        <div class="header">
+            <div class="title">Street Guesser</div>
+        </div>
+
+        <div class="content">
+            <div id="sidebar" class="sidebar">
+            </div>
+
+            <div id="pageContainer" class="page-container">
+                
+                <div id="GamesPage" class="page-content hidden">
+                    <div class="section" style="width: 100%;">
+                        <div class="header">
+                            <div class="title">Games (WIP)</div>
+                        </div>
+
+                        <div onclick="showPage('StreetGuesserGame')" class="games-button">All Streets</div>
+                        <div class="games-description">Can you find all of the streets?</div>
+                       
+                        <div onclick="showPage('StreetGuesserGame2')" class="games-button">Vinewood Streets</div>
+                        <div class="games-description">Can you find all of the Vinewood streets?</div>
+                       
+						<div onclick="showPage('StreetGuesserGame3')" class="games-button">Mirror Park Streets</div>
+                        <div class="games-description">Can you find all of the Mirror Park streets?</div>
+                       
+                    </div>
+                </div>
+
+                <div id="StreetGuesserPage" class="page-content hidden">
+                    <div class="section" style="width: 100%;">
+                        <div class="header">
+                            <div class="title">All Streets</div>
+                        </div>
+
+                        <div id="sgScore" class="sg-progress-text" style="margin-top: -5.5vmin;">0/0</div>
+                        <div id="sgRetry" onclick="PAGES['StreetGuesserGame'].endGame()" class="sg-header-button" style="display:none; margin-bottom: 0.75vmin; margin-top: -0.6vmin;">Give up</div>
+
+                        <div style="display: flex; flex-direction:row; justify-content:space-evenly; align-items: center;">
+                            <div id="sgCorrect" class="sg-progress-text" style="font-size: 1.75vmin; color:lightgreen;"></div>
+                            <div id="sgTimer" class="sg-progress-text" style="font-size: 2.25vmin;">0:00</div>
+                            <div id="sgIncorrect" class="sg-progress-text" style="font-size: 1.75vmin; color:red;"></div>
+                        </div>
+
+                        <div class="properties-map">
+                            <canvas style="width:100%; height:100%; background-color: #11AAD6;">
+                            </canvas>
+                        </div>
+
+                        <div style="display: flex; flex-direction:row; justify-content:space-evenly; align-items: center; margin-bottom: 1vmin;">
+                            <div onclick="PAGES['StreetGuesserGame'].shiftSelectedStreet(-1)" class="sg-header-button">Previous</div>
+                            <div onclick="PAGES['StreetGuesserGame'].startGame()" id="sgCurrentStreet" class="sg-header-button" style="min-width: 40vmin; font-size: 2.5vmin; font-weight: bold;">Click Here to Begin!</div>
+                            <div onclick="PAGES['StreetGuesserGame'].shiftSelectedStreet(1)" class="sg-header-button">Next</div>
+                        </div>
+                    </div>
+
+                    <div id="sgOverlay" class="sg-overlay">
+
+                        <div class="sg-overlay-box">
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 2.25vmin;">Street Guesser</div>
+
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 1.5vmin;">Score</div>
+                            <div id="sgEndPercent" class="sg-progress-text" style="font-size: 6vmin;"></div>
+                            <div id="sgEndScore" class="sg-progress-text" style="font-size: 2.25vmin;"></div>
+                            
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 1.5vmin;">Finished in</div>
+                            <div id="sgEndTime" class="sg-progress-text" style="font-size: 4vmin;"></div>
+
+                            <div onclick="PAGES['StreetGuesserGame'].retry()" class="sg-header-button" style="font-size: 2vmin; margin-bottom: 2vmin; position: absolute; bottom: 0; left: 0%; right: 0;">Retry</div>
+                        
+                            <div class="sg-progress-text" style="position:absolute; top: 0; opacity: 15%; font-size: 3vmin; margin: 0.5vmin;">OMDW</div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div id="StreetGuesserPage2" class="page-content hidden">
+                    <div class="section" style="width: 100%;">
+                        <div class="header">
+                            <div class="title">Vinewood Streets</div>
+                        </div>
+
+                        <div id="sgScore2" class="sg-progress-text" style="margin-top: -5.5vmin;">0/0</div>
+                        <div id="sgRetry2" onclick="PAGES['StreetGuesserGame2'].endGame2()" class="sg-header-button" style="display:none; margin-bottom: 0.75vmin; margin-top: -0.6vmin;">Give up</div>
+
+                        <div style="display: flex; flex-direction:row; justify-content:space-evenly; align-items: center;">
+                            <div id="sgCorrect2" class="sg-progress-text" style="font-size: 1.75vmin; color:lightgreen;"></div>
+                            <div id="sgTimer2" class="sg-progress-text" style="font-size: 2.25vmin;">0:00</div>
+                            <div id="sgIncorrect2" class="sg-progress-text" style="font-size: 1.75vmin; color:red;"></div>
+                        </div>
+
+                        <div class="properties-map">
+                            <canvas style="width:100%; height:100%; background-color: #11AAD6;">
+                            </canvas>
+                        </div>
+
+                        <div style="display: flex; flex-direction:row; justify-content:space-evenly; align-items: center; margin-bottom: 1vmin;">
+                            <div onclick="PAGES['StreetGuesserGame2'].shiftSelectedStreet2(-1)" class="sg-header-button">Previous</div>
+                            <div onclick="PAGES['StreetGuesserGame2'].startGame2()" id="sgCurrentStreet2" class="sg-header-button" style="min-width: 40vmin; font-size: 2.5vmin; font-weight: bold;">Click Here to Begin!</div>
+                            <div onclick="PAGES['StreetGuesserGame2'].shiftSelectedStreet2(1)" class="sg-header-button">Next</div>
+                        </div>
+                    </div>
+
+                    <div id="sgOverlay2" class="sg-overlay">
+
+                        <div class="sg-overlay-box">
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 2.25vmin;">Street Guesser</div>
+
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 1.5vmin;">Score</div>
+                            <div id="sgEndPercent2" class="sg-progress-text" style="font-size: 6vmin;"></div>
+                            <div id="sgEndScore2" class="sg-progress-text" style="font-size: 2.25vmin;"></div>
+                            
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 1.5vmin;">Finished in</div>
+                            <div id="sgEndTime2" class="sg-progress-text" style="font-size: 4vmin;"></div>
+
+                            <div onclick="PAGES['StreetGuesserGame2'].retry2()" class="sg-header-button" style="font-size: 2vmin; margin-bottom: 2vmin; position: absolute; bottom: 0; left: 0%; right: 0;">Retry</div>
+                        
+                            <div class="sg-progress-text" style="position:absolute; top: 0; opacity: 15%; font-size: 3vmin; margin: 0.5vmin;">OMDW</div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+                <div id="StreetGuesserPage3" class="page-content hidden">
+                    <div class="section" style="width: 100%;">
+                        <div class="header">
+                            <div class="title">Mirror Park Streets</div> <!-- Name for top left (left of score) -->
+                        </div>
+
+                        <div id="sgScore3" class="sg-progress-text" style="margin-top: -5.5vmin;">0/0</div>
+                        <div id="sgRetry3" onclick="PAGES['StreetGuesserGame3'].endGame3()" class="sg-header-button" style="display:none; margin-bottom: 0.75vmin; margin-top: -0.6vmin;">Give up</div>
+
+                        <div style="display: flex; flex-direction:row; justify-content:space-evenly; align-items: center;">
+                            <div id="sgCorrect3" class="sg-progress-text" style="font-size: 1.75vmin; color:lightgreen;"></div>
+                            <div id="sgTimer3" class="sg-progress-text" style="font-size: 2.25vmin;">0:00</div>
+                            <div id="sgIncorrect3" class="sg-progress-text" style="font-size: 1.75vmin; color:red;"></div>
+                        </div>
+
+                        <div class="properties-map">
+                            <canvas style="width:100%; height:100%; background-color: #11AAD6;">
+                            </canvas>
+                        </div>
+
+                        <div style="display: flex; flex-direction:row; justify-content:space-evenly; align-items: center; margin-bottom: 1vmin;">
+                            <div onclick="PAGES['StreetGuesserGame3'].shiftSelectedStreet3(-1)" class="sg-header-button">Previous</div>
+                            <div onclick="PAGES['StreetGuesserGame3'].startGame3()" id="sgCurrentStreet3" class="sg-header-button" style="min-width: 40vmin; font-size: 2.5vmin; font-weight: bold;">Click Here to Begin!</div>
+                            <div onclick="PAGES['StreetGuesserGame3'].shiftSelectedStreet3(1)" class="sg-header-button">Next</div>
+                        </div>
+                    </div>
+
+                    <div id="sgOverlay3" class="sg-overlay">
+
+                        <div class="sg-overlay-box">
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 2.25vmin;">Street Guesser</div>
+
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 1.5vmin;">Score</div>
+                            <div id="sgEndPercent3" class="sg-progress-text" style="font-size: 6vmin;"></div>
+                            <div id="sgEndScore3" class="sg-progress-text" style="font-size: 2.25vmin;"></div>
+                            
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 1.5vmin;">Finished in</div>
+                            <div id="sgEndTime3" class="sg-progress-text" style="font-size: 4vmin;"></div>
+
+                            <div onclick="PAGES['StreetGuesserGame3'].retry3()" class="sg-header-button" style="font-size: 2vmin; margin-bottom: 2vmin; position: absolute; bottom: 0; left: 0%; right: 0;">Retry</div>
+                        
+                            <div class="sg-progress-text" style="position:absolute; top: 0; opacity: 15%; font-size: 3vmin; margin: 0.5vmin;">OMDW</div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+                <div id="StreetGuesserPage4" class="page-content hidden">
+                    <div class="section" style="width: 100%;">
+                        <div class="header">
+                            <div class="title">Sandy Shores Streets</div> <!-- Name for top left (left of score) -->
+                        </div>
+
+                        <div id="sgScore4" class="sg-progress-text" style="margin-top: -5.5vmin;">0/0</div>
+                        <div id="sgRetry4" onclick="PAGES['StreetGuesserGame4'].endGame4()" class="sg-header-button" style="display:none; margin-bottom: 0.75vmin; margin-top: -0.6vmin;">Give up</div>
+
+                        <div style="display: flex; flex-direction:row; justify-content:space-evenly; align-items: center;">
+                            <div id="sgCorrect4" class="sg-progress-text" style="font-size: 1.75vmin; color:lightgreen;"></div>
+                            <div id="sgTimer4" class="sg-progress-text" style="font-size: 2.25vmin;">0:00</div>
+                            <div id="sgIncorrect4" class="sg-progress-text" style="font-size: 1.75vmin; color:red;"></div>
+                        </div>
+
+                        <div class="properties-map">
+                            <canvas style="width:100%; height:100%; background-color: #11AAD6;">
+                            </canvas>
+                        </div>
+
+                        <div style="display: flex; flex-direction:row; justify-content:space-evenly; align-items: center; margin-bottom: 1vmin;">
+                            <div onclick="PAGES['StreetGuesserGame4'].shiftSelectedStreet4(-1)" class="sg-header-button">Previous</div>
+                            <div onclick="PAGES['StreetGuesserGame4'].startGame4()" id="sgCurrentStreet4" class="sg-header-button" style="min-width: 40vmin; font-size: 2.5vmin; font-weight: bold;">Click Here to Begin!</div>
+                            <div onclick="PAGES['StreetGuesserGame4'].shiftSelectedStreet4(1)" class="sg-header-button">Next</div>
+                        </div>
+                    </div>
+
+                    <div id="sgOverlay4" class="sg-overlay">
+
+                        <div class="sg-overlay-box">
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 2.25vmin;">Street Guesser</div>
+
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 1.5vmin;">Score</div>
+                            <div id="sgEndPercent4" class="sg-progress-text" style="font-size: 6vmin;"></div>
+                            <div id="sgEndScore4" class="sg-progress-text" style="font-size: 2.25vmin;"></div>
+                            
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 1.5vmin;">Finished in</div>
+                            <div id="sgEndTime4" class="sg-progress-text" style="font-size: 4vmin;"></div>
+
+                            <div onclick="PAGES['StreetGuesserGame4'].retry4()" class="sg-header-button" style="font-size: 2vmin; margin-bottom: 2vmin; position: absolute; bottom: 0; left: 0%; right: 0;">Retry</div>
+                        
+                            <div class="sg-progress-text" style="position:absolute; top: 0; opacity: 15%; font-size: 3vmin; margin: 0.5vmin;">OMDW</div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </body>
+</html>
