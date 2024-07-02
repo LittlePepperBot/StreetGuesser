@@ -204,7 +204,7 @@ class StreetGuesserPage4 extends Page {
 
         document.getElementById("sgEndTime4").innerHTML = `${diff4
             .getMinutes()
-            .toString()}:${diff4.getSeconds().toString().padStart(4, "0")}`;
+            .toString()}:${diff4.getSeconds().toString().padStart(2, "0")}`;
     }
 
     retry4() {
