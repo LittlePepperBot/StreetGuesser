@@ -62,7 +62,9 @@ function setupPages() {
 	addPage("StreetGuesserGame3",new StreetGuesserPage3(document.getElementById("StreetGuesserPage3")));
 	addPage("StreetGuesserGame4",new StreetGuesserPage4(document.getElementById("StreetGuesserPage4")));
     addPage("StreetGuesserGame5",new StreetGuesserPage5(document.getElementById("StreetGuesserPage5")));
-    addPage("StreetGuesserGame6",new StreetGuesserPage6(document.getElementById("StreetGuesserPage6")));
+	addPage("StreetGuesserGame6",new StreetGuesserPage6(document.getElementById("StreetGuesserPage6")));
+	addPage("StreetGuesserGame7",new StreetGuesserPage7(document.getElementById("StreetGuesserPage7")));
+	
 }
 
 function showPage(targetKey) {
