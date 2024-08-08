@@ -61,7 +61,7 @@ function setupPages() {
 	addPage("StreetGuesserGame2",new StreetGuesserPage2(document.getElementById("StreetGuesserPage2")));
 	addPage("StreetGuesserGame3",new StreetGuesserPage3(document.getElementById("StreetGuesserPage3")));
 	addPage("StreetGuesserGame4",new StreetGuesserPage4(document.getElementById("StreetGuesserPage4")));
-	
+    addPage("StreetGuesserGame5",new StreetGuesserPage5(document.getElementById("StreetGuesserPage5")));
 	
 }
 
