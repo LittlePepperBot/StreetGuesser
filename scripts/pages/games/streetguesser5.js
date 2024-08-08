@@ -36,7 +36,7 @@ class StreetGuesserPage5 extends Page {
 
 	
     getDisplayName() {
-        return "Sandy Shores"; //name on panel
+        return "Grapeseed"; //name on panel
     }
 
     hideFromPageList() {
