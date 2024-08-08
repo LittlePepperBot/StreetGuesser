@@ -9341,7 +9341,94 @@ MAP = {
             ]
         }, 
 
-
+//NEW PALETO STREETS
+        "Pyrite Avenue": {
+            "Name": "Pyrite Avenue",
+            "Points": [
+                [
+                    1967,
+                    1675
+                ],
+                [
+                    1978,
+                    1686
+                ]
+            ]
+        },
+        "Cascabel Avenue": {
+            "Name": "Cascabel Avenue",
+            "Points": [
+                [
+                    1967,
+                    1656
+                ],
+                [
+                    1976,
+                    1665
+                ]
+            ]
+        },
+        "Procopio Promenade": {
+            "Name": "Procopio Promenade",
+            "Points": [
+                [
+                    2070,
+                    1640
+                ],
+                [
+                    2050,
+                    1620
+                ],
+                [
+                    2020,
+                    1610
+                ],
+                [
+                    2005,
+                    1610
+                ],
+                [
+                    1980,
+                    1630
+                ],
+                [
+                    1950,
+                    1660
+                ],
+                [
+                    1915,
+                    1680
+                ],
+                [
+                    1910,
+                    1703
+                ],
+                [
+                    1898,
+                    1721
+                ],
+                [
+                    1892,
+                    1730
+                ],
+                [
+                    1891,
+                    1740
+                ],
+                [
+                    1881,
+                    1770
+                ],
+                [
+                    1873,
+                    1790
+                ],
+                [
+                    1875,
+                    1805
+                ]
+            ]
+        },
 
     },
 
@@ -12743,7 +12830,6 @@ MAP = {
 
 	},
 
-
 	"Grapeseed": { 
         "Grapeseed Avenue": {
             "Name": "Grapeseed Avenue",
@@ -13314,8 +13400,6 @@ MAP = {
                 ]
             ]
         },
-        
-        
 		"Cascabel Avenue": {
             "Name": "Cascabel Avenue",
             "Points": [
@@ -13329,7 +13413,6 @@ MAP = {
                 ]
             ]
         },
-        
         "Procopio Promenade": {
             "Name": "Procopio Promenade",
             "Points": [
