@@ -274,6 +274,56 @@
 
 
 
+                
+
+                <div id="StreetGuesserPage5" class="page-content hidden">
+                    <div class="section" style="width: 100%;">
+                        <div class="header">
+                            <div class="title">Sandy Shores Streets</div> <!-- Name for top left (left of score) -->
+                        </div>
+
+                        <div id="sgScore5" class="sg-progress-text" style="margin-top: -5.5vmin;">0/0</div>
+                        <div id="sgRetry5" onclick="PAGES['StreetGuesserGame5'].endGame5()" class="sg-header-button" style="display:none; margin-bottom: 0.75vmin; margin-top: -0.6vmin;">Give up</div>
+
+                        <div style="display: flex; flex-direction:row; justify-content:space-evenly; align-items: center;">
+                            <div id="sgCorrect5" class="sg-progress-text" style="font-size: 1.75vmin; color:lightgreen;"></div>
+                            <div id="sgTimer5" class="sg-progress-text" style="font-size: 2.25vmin;">0:00</div>
+                            <div id="sgIncorrect5" class="sg-progress-text" style="font-size: 1.75vmin; color:red;"></div>
+                        </div>
+
+                        <div class="properties-map">
+                            <canvas style="width:100%; height:100%; background-color: #11AAD6;">
+                            </canvas>
+                        </div>
+
+                        <div style="display: flex; flex-direction:row; justify-content:space-evenly; align-items: center; margin-bottom: 1vmin;">
+                            <div onclick="PAGES['StreetGuesserGame5'].shiftSelectedStreet5(-1)" class="sg-header-button">Previous</div>
+                            <div onclick="PAGES['StreetGuesserGame5'].startGame5()" id="sgCurrentStreet5" class="sg-header-button" style="min-width: 40vmin; font-size: 2.5vmin; font-weight: bold;">Click Here to Begin!</div>
+                            <div onclick="PAGES['StreetGuesserGame5'].shiftSelectedStreet5(1)" class="sg-header-button">Next</div>
+                        </div>
+                    </div>
+
+                    <div id="sgOverlay5" class="sg-overlay">
+
+                        <div class="sg-overlay-box">
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 2.25vmin;">Street Guesser</div>
+
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 1.5vmin;">Score</div>
+                            <div id="sgEndPercent5" class="sg-progress-text" style="font-size: 6vmin;"></div>
+                            <div id="sgEndScore5" class="sg-progress-text" style="font-size: 2.25vmin;"></div>
+                            
+                            <div class="sg-progress-text" style="margin-top: 4vmin; font-size: 1.5vmin;">Finished in</div>
+                            <div id="sgEndTime5" class="sg-progress-text" style="font-size: 4vmin;"></div>
+
+                            <div onclick="PAGES['StreetGuesserGame5'].retry5()" class="sg-header-button" style="font-size: 2vmin; margin-bottom: 2vmin; position: absolute; bottom: 0; left: 0%; right: 0;">Retry</div>
+                        
+                            <div class="sg-progress-text" style="position:absolute; top: 0; opacity: 15%; font-size: 3vmin; margin: 0.5vmin;">OMDW</div>
+                        </div>
+
+                    </div>
+                </div>
+
+
 
             </div>
         </div>
